@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYODIW COMMUNITY | Free Assets</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00d2ff;
+            --dark-blue: #003366;
+            --deep-ocean: #001a33;
+            --bg-black: #050505;
+            --neon-glow: 0 0 25px rgba(0, 210, 255, 0.8), 0 0 50px rgba(0, 210, 255, 0.4);
+        }
+
+        @keyframes flowRGB {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--bg-black);
+            background: linear-gradient(-45deg, #050505, #001a33, #000c1a, #050505);
+            background-size: 400% 400%;
+            animation: flowRGB 15s ease infinite;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* --- JUDUL SUPER MENYALA --- */
+        .rgb-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(24px, 8vw, 42px);
+            font-weight: 700;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            background: linear-gradient(90deg, #00d2ff, #ffffff, #00d2ff, #3a7bd5);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: flowRGB 2s linear infinite;
+            /* Efek Menyala Extra */
+            filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.9));
+            margin-bottom: 5px;
+        }
+
+        .logo-container { margin: 15px 0; }
+        .logo-img {
+            width: clamp(100px, 25vw, 130px);
+            height: clamp(100px, 25vw, 130px);
+            border-radius: 50%;
+            border: 3px solid var(--neon-blue);
+            box-shadow: var(--neon-glow);
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .glass-panel {
+            background: rgba(0, 26, 51, 0.85);
+            width: 100%;
+            max-width: 500px;
+            border-radius: 25px;
+            padding: 30px 20px;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
+            text-align: center;
+            backdrop-filter: blur(20px);
+        }
+
+        .step-box {
+            padding: 20px;
+            border-radius: 15px;
+            background: rgba(0, 210, 255, 0.05);
+            border: 1px dashed var(--neon-blue);
+            margin-top: 15px;
+        }
+
+        .btn-sub {
+            background: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .btn-verify {
+            background: transparent;
+            color: #666;
+            border: 1px solid #444;
+            padding: 12px;
+            border-radius: 12px;
+            width: 100%;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* --- ASSET MENU DENGAN SCROLL --- */
+        #assetMenu {
+            display: none;
+            width: 100%;
+            max-width: 600px; /* Diperkecil agar lebih rapi */
+            margin-top: 20px;
+        }
+
+        .scroll-container {
+            max-height: 450px; /* Batas tinggi agar bisa di-scroll */
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        /* Styling Scrollbar Keren */
+        .scroll-container::-webkit-scrollbar { width: 6px; }
+        .scroll-container::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
+        .scroll-container::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
+
+        .asset-card {
+            background: rgba(13, 17, 23, 0.9);
+            padding: 15px 20px; /* Ukuran diperkecil */
+            border-radius: 15px;
+            border-left: 5px solid var(--neon-blue);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            transition: 0.3s;
+        }
+
+        .asset-card:hover { transform: scale(1.02); background: #001a33; }
+
+        .asset-info div { font-family: 'Orbitron', sans-serif; font-size: 14px; margin-bottom: 3px; }
+        .badge {
+            font-size: 9px;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--neon-blue);
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .btn-get {
+            background: var(--neon-blue);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 11px;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="gatePanel" class="glass-panel">
+        <h1 class="rgb-title">LYODIW COMMUNITY</h1>
+        
+        <div class="logo-container">
+            <img src="IMG_3109.jpeg" alt="Logo Lyodiw" class="logo-img">
+        </div>
+
+        <p style="color: #00d2ff; font-weight: bold; letter-spacing: 1px;">FREE ASSETS LYODIW COMMUNITY</p>
+        
+        <div class="step-box">
+            <a href="https://youtube.com/@lyodiw" target="_blank" class="btn-sub clickable" id="subBtn">SUBSCRIBE CHANNEL</a>
+            <button class="btn-verify clickable" id="verifyBtn" disabled>VERIFYING (30s)</button>
+        </div>
+    </div>
+
+    <div id="assetMenu">
+        <h2 style="text-align:center; font-family:'Orbitron'; color: var(--neon-blue); margin-bottom: 20px; font-size: 18px;">FREE ASSETS LYODIW COMMUNITY</h2>
+        
+        <div class="scroll-container">
+            <div class="asset-card">
+                <div class="asset-info">
+                    <div>Summit Kit V1</div>
+                    <span class="badge">Roblox Asset ID</span>
+                </div>
+                <a href="https://create.roblox.com/store/asset/106139965398409/Summit-Kit-Lyodiw-V1" target="_blank" class="btn-get">GET</a>
+            </div>
+
+            <div class="asset-card" style="border-left-color: #34d399;">
+                <div class="asset-info">
+                    <div>Summit Kit V1</div>
+                    <span class="badge" style="color:#34d399; background:rgba(52,211,153,0.1)">File RBXM</span>
+                </div>
+                <a href="https://www.mediafire.com/file/0ksufbd78cggo33/Summit_Kit_Lyodiw_V1.rbxm/file" target="_blank" class="btn-get" style="background:#34d399;">GET</a>
+            </div>
+
+            <div class="asset-card">
+                <div class="asset-info">
+                    <div>Help Admin</div>
+                    <span class="badge">Roblox Asset ID</span>
+                </div>
+                <a href="https://create.roblox.com/store/asset/93386831627465/HelpAdminByLyodiw" target="_blank" class="btn-get">GET</a>
+            </div>
+
+            <div class="asset-card" style="border-left-color: #34d399;">
+                <div class="asset-info">
+                    <div>Help Admin</div>
+                    <span class="badge" style="color:#34d399; background:rgba(52,211,153,0.1)">File RBXM</span>
+                </div>
+                <a href="https://www.mediafire.com/file/y2v5jkjia4t8chl/HelpAdminByLyodiw.rbxm/file" target="_blank" class="btn-get" style="background:#34d399;">GET</a>
+            </div>
+            </div>
+    </div>
+
+    <script>
+        const subBtn = document.getElementById('subBtn');
+        const verifyBtn = document.getElementById('verifyBtn');
+        const gatePanel = document.getElementById('gatePanel');
+        const assetMenu = document.getElementById('assetMenu');
+
+        let isSubscribed = false;
+        let timeLeft = 30; 
+        let timerStarted = false;
+
+        subBtn.addEventListener('click', () => {
+            isSubscribed = true; // Menandai user sudah menekan tombol subscribe
+            if (!timerStarted) {
+                timerStarted = true;
+                verifyBtn.style.color = "var(--neon-blue)";
+                verifyBtn.style.borderColor = "var(--neon-blue)";
+                
+                const countdown = setInterval(() => {
+                    timeLeft--;
+                    verifyBtn.innerText = `VERIFYING (${timeLeft}s)`;
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(countdown);
+                        verifyBtn.innerText = "UNLOCK ASSETS ✓";
+                        verifyBtn.style.background = "var(--neon-blue)";
+                        verifyBtn.style.color = "#000";
+                        verifyBtn.disabled = false;
+                    }
+                }, 1000);
+            }
+        });
+
+        verifyBtn.addEventListener('click', () => {
+            if (isSubscribed) {
+                gatePanel.style.display = "none";
+                assetMenu.style.display = "block";
+                window.scrollTo(0, 0); 
+            } else {
+                alert("SUBSCRIBE DULU YA");
+                // Reset timer atau arahkan kembali
+                location.reload(); 
+            }
+        });
+    </script>
+</body>
+</html>
