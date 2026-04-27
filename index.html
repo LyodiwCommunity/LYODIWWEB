@@ -49,6 +49,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: flowRGB 2s linear infinite;
+            /* Efek Menyala Extra */
             filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.9));
             margin-bottom: 5px;
         }
@@ -114,25 +115,24 @@
         #assetMenu {
             display: none;
             width: 100%;
-            max-width: 600px;
+            max-width: 600px; /* Diperkecil agar lebih rapi */
             margin-top: 20px;
         }
 
         .scroll-container {
-            max-height: 450px;
+            max-height: 450px; /* Batas tinggi agar bisa di-scroll */
             overflow-y: auto;
             padding-right: 10px;
-            padding-bottom: 10px;
         }
 
-        /* Styling Scrollbar */
+        /* Styling Scrollbar Keren */
         .scroll-container::-webkit-scrollbar { width: 6px; }
         .scroll-container::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); }
         .scroll-container::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 10px; }
 
         .asset-card {
             background: rgba(13, 17, 23, 0.9);
-            padding: 15px 20px;
+            padding: 15px 20px; /* Ukuran diperkecil */
             border-radius: 15px;
             border-left: 5px solid var(--neon-blue);
             display: flex;
@@ -220,16 +220,23 @@
                 </div>
                 <a href="https://www.mediafire.com/file/y2v5jkjia4t8chl/HelpAdminByLyodiw.rbxm/file" target="_blank" class="btn-get" style="background:#34d399;">GET</a>
             </div>
-
-            <div class="asset-card" style="border-left-color: #34d399;">
-                <div class="asset-info">
-                    <div>FARMING KIT V1</div>
-                    <span class="badge" style="color:#34d399; background:rgba(52,211,153,0.1)">File RBXM</span>
-                </div>
-                <a href="https://www.mediafire.com/file/128cye2idh3dnss/FarmingKitV1Lyodiw.rbxm/file" target="_blank" class="btn-get" style="background:#34d399;">GET</a>
             </div>
-        </div>
     </div>
+<div class="asset-card">
+    <div class="asset-info">
+        <div>FARMING KIT V1</div>
+        <span class="badge">TIPE (RBXM)</span>
+    </div>
+    <a href="https://www.mediafire.com/file/128cye2idh3dnss/FarmingKitV1Lyodiw.rbxm/file" target="_blank" class="btn-get">GET</a>
+</div>
+
+            <div class="asset-card">
+                <div class="asset-info">
+                    <div>Farming Kit V1</div>
+                    <span class="badge">Roblox Asset ID</span>
+                </div>
+                <a href="https://create.roblox.com/store/asset/116976589639945/FarmingKitV1ByLyodiw" target="_blank" class="btn-get">GET</a>
+            </div>
 
     <script>
         const subBtn = document.getElementById('subBtn');
@@ -242,7 +249,7 @@
         let timerStarted = false;
 
         subBtn.addEventListener('click', () => {
-            isSubscribed = true; 
+            isSubscribed = true; // Menandai user sudah menekan tombol subscribe
             if (!timerStarted) {
                 timerStarted = true;
                 verifyBtn.style.color = "var(--neon-blue)";
@@ -270,6 +277,7 @@
                 window.scrollTo(0, 0); 
             } else {
                 alert("SUBSCRIBE DULU YA");
+                // Reset timer atau arahkan kembali
                 location.reload(); 
             }
         });
